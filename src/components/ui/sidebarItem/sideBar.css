@@ -1,0 +1,18 @@
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 13px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+
+.sidebar-item h3 {
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+.sidebar.collapsed .sidebar-text {
+    display: none;
+}
