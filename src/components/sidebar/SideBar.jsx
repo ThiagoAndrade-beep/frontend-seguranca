@@ -25,24 +25,24 @@ function Sidebar({colapsed}) {
           <div className="nav-principal">
             <p className="title-principal">Principal</p>
             <ul className="list-principal">
-              <SidebarItem icon={FiAlertTriangle} label="Vulnerabilidades"/>
-              <SidebarItem icon={FiFolder} label="Projetos"/>
+              <SidebarItem icon={FiAlertTriangle} label="Vulnerabilidades" collapsed={colapsed}/>
+              <SidebarItem icon={FiFolder} label="Projetos" collapsed={colapsed}/>
             </ul>
           </div>
 
           <div className="nav-principal">
             <p className="title-principal">Análise</p>
             <ul className="list-principal">
-              <SidebarItem icon={FiBarChart2} label="Relatórios"/>
-              <SidebarItem icon={FiCalendar} label="Calendário"/>
+              <SidebarItem icon={FiBarChart2} label="Relatórios" collapsed={colapsed}/>
+              <SidebarItem icon={FiCalendar} label="Calendário" collapsed={colapsed}/>
             </ul>
           </div>
 
           <div className="nav-principal">
             <p className="title-principal">Sistema</p>
             <ul className="list-principal">
-              <SidebarItem icon={FiUsers} label="Usuários"/>
-              <SidebarItem icon={FiSettings} label="Configurações"/>
+              <SidebarItem icon={FiUsers} label="Usuários" collapsed={colapsed}/>
+              <SidebarItem icon={FiSettings} label="Configurações" collapsed={colapsed}/>
             </ul>
           </div>
       </nav>

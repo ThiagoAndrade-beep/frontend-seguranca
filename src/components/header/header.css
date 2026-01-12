@@ -9,4 +9,16 @@
   justify-content: space-between;
 }
 
+.btn-hamburguer {
+  all: unset;
+  cursor: pointer;
+  padding: 8px;
+}
 
+.btn-hamburguer:hover {
+  background-color: #dadada;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,21 @@
+.vulnerabilities-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vulnerabilities-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.vulnerabilities-header p {
+    color: #6B7280;
+}
+
+.cards-vulnerabilities {
+    display: flex;
+    align-items: stretch;
+    gap: 0.8rem;
+}
