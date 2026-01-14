@@ -1,0 +1,30 @@
+.filter-select-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+
+  padding: 8px 36px 8px 14px;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+}
+
+.filter-select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6B7280;
+  pointer-events: none;
+  font-size: 20px;
+}

@@ -18,7 +18,7 @@ const CardVulnerabilities = ({ icon: Icon, number, title, variant }) => {
 
             </div>
 
-            <div className={`card-vulnerabilities-texts ${variant}`}>
+            <div className='card-vulnerabilities-texts'>
                 <p>{title}</p>
                 <h3 style={{ color: theme.color }}>{number}</h3>
             </div>
