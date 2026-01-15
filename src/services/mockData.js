@@ -25,7 +25,7 @@ export const vulnerabilities = [
     project: "Frontend App",
     description: "Teste VULN 003 Descrição da vulnerabilidade",
     createdAt: "2024-12-03",
-    status: "In Progress"
+    status: "In-Progress"
   },
   {
     id: "VULN-004",
@@ -34,7 +34,7 @@ export const vulnerabilities = [
     project: "Frontend App",
     description: "Teste VULN 004 Descrição da vulnerabilidade",
     createdAt: "2024-12-03",
-    status: "In Progress"
+    status: "In-Progress"
   },
   {
     id: "VULN-005",
@@ -61,7 +61,7 @@ export const vulnerabilities = [
     project: "User Service",
     description: "Teste VULN 007 Descrição da vulnerabilidade",
     createdAt: "2024-12-07",
-    status: "In Progress"
+    status: "In-Progress"
   },
   {
     id: "VULN-008",
@@ -97,7 +97,7 @@ export const vulnerabilities = [
     project: "Public API",
     description: "Teste VULN 011 Descrição da vulnerabilidade",
     createdAt: "2024-12-11",
-    status: "In Progress"
+    status: "In-Progress"
   },
   {
     id: "VULN-012",

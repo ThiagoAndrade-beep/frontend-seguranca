@@ -12,7 +12,7 @@ function Layout({ children }) {
 
   return (
     <div className="layout">
-      <Sidebar colapsed={isSidebarColapsed}/>
+        <Sidebar colapsed={isSidebarColapsed}/>
       
       <div className="layout-main">
         <Header onToggle={toggleSidebar}/>

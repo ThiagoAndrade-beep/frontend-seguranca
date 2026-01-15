@@ -3,6 +3,7 @@ import CardVulnerabilities from "../../components/ui/card-vulnerabilities/cardVu
 import "./vulnerabilities.css"
 import { FiAlertCircle } from "react-icons/fi";
 import { FiFilter } from "react-icons/fi";
+import { BsFillCircleFill } from "react-icons/bs";
 import FilterSelect from "../../components/ui/filterselect/FilterSelect";
 import { useVulnerabilities } from "../../hooks/UseVulnerabilities";
 
@@ -16,7 +17,7 @@ function Vulnerabilities() {
   const highFilter = data.filter((item) => item.severity === "high")
   const mediumFilter = data.filter((item) => item.severity === "medium")
   const lowFilter = data.filter((item) => item.severity === "low")
-  
+
 
   return (
     <main className="vulnerabilities-container">
@@ -67,6 +68,43 @@ function Vulnerabilities() {
           />
         </div>
       </div>
+
+      <table className="vuln-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Vulnerability</th>
+            <th>Severity</th>
+            <th>Status</th>
+            <th>Project</th>
+            <th>Created</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {data.map(vuln => (
+            <tr key={vuln.id}>
+              <td className="vuln-id">{vuln.id}</td>
+              <td className="vuln-title">{vuln.title}</td>
+              <td>
+                <span className={`badge ${vuln.severity}`}>
+                  {vuln.severity}
+                </span>
+              </td>
+              <td>
+                <span className={`badge-status ${vuln.status}`}>
+                  <BsFillCircleFill size={6}/>
+                  {vuln.status}
+                </span>
+              </td>
+              <td className="vuln-project">{vuln.project}</td>
+              <td className="vuln-createdAt">{vuln.createdAt}</td>
+              <td>›</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </main>
   );
 }
