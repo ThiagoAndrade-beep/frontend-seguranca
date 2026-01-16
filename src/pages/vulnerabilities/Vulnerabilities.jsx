@@ -18,6 +18,10 @@ function Vulnerabilities() {
   const mediumFilter = data.filter((item) => item.severity === "medium")
   const lowFilter = data.filter((item) => item.severity === "low")
 
+  const projects = [...new Set(data.map(item => item.project))].map((item) => ({
+    value: item,
+    label: item
+  }))  
 
   return (
     <main className="vulnerabilities-container">
@@ -59,12 +63,7 @@ function Vulnerabilities() {
             ]}
           />
           <FilterSelect label="Project" state={project} setState={setProject}
-            options={[
-              { value: "commerce", label: "Commerce" },
-              { value: "internal", label: "Internal" },
-              { value: "customer", label: "Customer" },
-              { value: "mobile", label: "Mobile" }
-            ]}
+            options={projects}
           />
         </div>
       </div>
