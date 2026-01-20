@@ -158,3 +158,29 @@
     color: #ea580c;
     border: 1px solid #fed7aa;
 }
+
+.vulnerability-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 3rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+.texts-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.texts-not-found h3 {
+    color: #6B7280;
+    font-weight: 400;
+}
+
+.texts-not-found p {
+    color: #9CA3AF;
+    font-weight: 400;
+}

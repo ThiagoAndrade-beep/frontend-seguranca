@@ -1,12 +1,12 @@
 import React from 'react'
 import './filterSelect.css'
 
-const FilterSelect = ({ state, setState, options, label }) => {
+const FilterSelect = ({ value, onChange, options, label }) => {
     return (
         <div className="filter-select-wrapper">
             <select
-                value={state}
-                onChange={(e) => setState(e.target.value)}
+                value={value}
+                onChange={(e) => onChange(e.target.value)}
                 className="filter-select"
             >
                 <option value="">{label}</option>

@@ -21,8 +21,20 @@ function Vulnerabilities() {
   const projects = [...new Set(data.map(item => item.project))].map((item) => ({
     value: item,
     label: item
-  }))  
+  }))
 
+  const filterVulnerabilities = (data) => { 
+    return data.filter((item) => {
+      const matchSeverity = !severity || item.severity === severity
+      const matchStatus = !status || item.status === status
+      const matchProject = !project || item.project === project
+
+      return matchSeverity && matchStatus && matchProject
+    })
+  }
+
+  const filteredData = filterVulnerabilities(data)
+  
   return (
     <main className="vulnerabilities-container">
       <header className="vulnerabilities-header">
@@ -47,7 +59,7 @@ function Vulnerabilities() {
         </div>
 
         <div className="filters-actions">
-          <FilterSelect label="Severity" state={severity} setState={setSeverity}
+          <FilterSelect label="Severity" value={severity} onChange={setSeverity}
             options={[
               { value: "critical", label: "Critical" },
               { value: "high", label: "High" },
@@ -55,20 +67,28 @@ function Vulnerabilities() {
               { value: "low", label: "Low" }
             ]}
           />
-          <FilterSelect label="Status" state={status} setState={setStatus}
+          <FilterSelect label="Status" value={status} onChange={setStatus}
             options={[
               { value: "open", label: "Open" },
-              { value: "inProgress", label: "InProgress" },
+              { value: "In-Progress", label: "InProgress" },
               { value: "fixed", label: "Fixed" }
             ]}
           />
-          <FilterSelect label="Project" state={project} setState={setProject}
+          <FilterSelect label="Project" value={project} onChange={setProject}
             options={projects}
           />
         </div>
       </div>
 
-      <table className="vuln-table">
+      {filteredData.length === 0 ? (
+        <div className="vulnerability-not-found">
+          <div className="texts-not-found">
+            <h3>No vulnerabilities found</h3>
+            <p>Try adjusting your filters</p>
+          </div>
+        </div>
+      ) : (
+        <table className="vuln-table">
         <thead>
           <tr>
             <th>ID</th>
@@ -82,7 +102,7 @@ function Vulnerabilities() {
         </thead>
 
         <tbody>
-          {data.map(vuln => (
+          {filteredData.map(vuln => (
             <tr key={vuln.id}>
               <td className="vuln-id">{vuln.id}</td>
               <td className="vuln-title">{vuln.title}</td>
@@ -104,6 +124,7 @@ function Vulnerabilities() {
           ))}
         </tbody>
       </table>
+      )}
     </main>
   );
 }
