@@ -1,9 +1,123 @@
+.layout.light {
+  --bg-app: #f9fafb;
+  --bg-sidebar: #0f172a;
+  --bg-header: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-icon-sidebar: #1B2640;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+
+  --border-default: #e5e7eb;
+
+  /*card - total:*/
+  --total-card-border: #E5E7EB;
+  --total-card-icon-color: #6B7280;
+  --total-card-icon-bg: #F3F4F6;
+  --total-card-color: #000;
+
+  /*card - critical*/
+  --critical-card-border: #FECACA;
+  --critical-card-bg: #FEF2F2;
+  --critical-card-color: #DC2626;
+  --critical-card-icon-color: #DC2626;
+  --critical-card-icon-bg: #FEE2E2;
+
+  /*card - high*/
+  --high-card-border: #FED7AA;
+  --high-card-bg: #FFF7ED;
+  --high-card-color: #EA580C;
+  --high-card-icon-color: #EA580C;
+  --high-card-icon-bg: #FFEDD5;
+
+  /*card - medium*/
+  --medium-card-border: #FEF3C7;
+  --medium-card-bg: #FFFBEB;
+  --medium-card-color: #FACC15;
+  --medium-card-icon-color: #EAB308;
+  --medium-card-icon-bg: #FEF9C3;
+
+  /*card - low*/
+  --low-card-border: #BFDBFE;
+  --low-card-bg: #F0F9FF;
+  --low-card-color: #3B82F6;
+  --low-card-icon-color: #3B82F6;
+  --low-card-icon-bg: #E0F2FE;
+
+  --filter-bg: #F3F4F6;
+  --filter-border: #E5E7EB;
+  --filter-color: #111827;
+
+  --table-header-bg: #f3f4f6;
+
+    --status-fixed-bg: #dcfce7;
+    --status-fixed-text: #16a34a;
+    --status-fixed-border: #18d65d;
+}
+
+.layout.dark {
+  --bg-app: #121212;
+  --bg-sidebar: #0b0b0b;
+  --bg-header: #1C1C1C;
+  --bg-surface: #1f2937;
+  --bg-icon-sidebar: white;
+  --icon-sidebar: #111827;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #94a3b8;
+
+  --border-default: #ffffff;
+
+    /*card - total:*/
+  --total-card-border: #2A2A2A;
+  --total-card-icon-color: #9CA3AF;
+  --total-card-icon-bg: #1F1F1F;
+  --total-card-color: #FFFFFF;
+
+  /*card - critical*/
+  --critical-card-border: #7F1D1D;
+  --critical-card-bg: #3A0F0F;
+  --critical-card-color: #FF4D4F;
+  --critical-card-icon-color: #FF4D4F;
+  --critical-card-icon-bg: #2A0A0A;
+
+  /*card - high*/
+  --high-card-border: #9A3412;
+  --high-card-bg: #3A220C;
+  --high-card-color: #FB923C;
+  --high-card-icon-color: #FB923C;
+  --high-card-icon-bg: #2A1608;
+
+  /*card - medium*/
+  --medium-card-border: #A16207;
+  --medium-card-bg: #3A300C;
+  --medium-card-color: #FACC15;
+  --medium-card-icon-color: #FACC15;
+  --medium-card-icon-bg: #2A2408;
+
+  /*card - low*/
+  --low-card-border: #0369A1;
+  --low-card-bg: #0B2A3A;
+  --low-card-color: #38BDF8;
+  --low-card-icon-color: #38BDF8;
+  --low-card-icon-bg: #081E2A;
+
+  --filter-bg: #0F0F10;
+  --filter-border: #2A2A2A;
+  --filter-color: #e5e7eb;
+
+  --table-header-bg: #1C1C1C;
+
+  --status-fixed-bg: #0B2A1A;
+  --status-fixed-text: #22C55E;
+  --status-fixed-border: #166534;
+}
+
 .layout {
   display: flex;
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: var(--bg-app);
 }
-
 
 .layout-main {
   flex: 1;

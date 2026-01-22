@@ -12,8 +12,12 @@
     gap: 0.5rem;
 }
 
+.vulnerabilities-header h2 {
+    color: var(--text-primary);
+}
+
 .vulnerabilities-header p {
-    color: #6B7280;
+    color: var(--text-secondary);
 }
 
 .cards-vulnerabilities {
@@ -56,7 +60,8 @@
 }
 
 .vuln-table thead {
-    background-color: #f3f4f6;
+    background-color: var(--bg-table-header);
+    color: var(--text-primary);
 }
 
 .vuln-table th {
@@ -81,6 +86,7 @@
 
 .vuln-title {
     font-size: 15px;
+    color: var(--text-primary);
 }
 
 .badge {
@@ -95,37 +101,37 @@
 }
 
 .badge.critical {
-    background-color: #fee2e2;
-    color: #dc2626;
-    border: 1px solid #e11e1e;
+    background-color: var(--critical-card-bg);
+    color: var(--critical-card-color);
+    border: 1px solid var(--critical-card-border);
 }
 
 .badge.high {
-    background-color: #ffedd5;
-    color: #ea580c;
-    border: 1px solid #f97316;
+    background-color: var(--high-card-bg);
+    color: var(--high-card-color);
+    border: 1px solid var(--high-card-border);
 }
 
 .badge.medium {
-    background-color: #FFFBEB;
-    color: #FACC15;
-    border: 1px solid #eab308;
+    background-color: var(--medium-card-bg);
+    color: var(--medium-card-color);
+    border: 1px solid var(--medium-card-border);
 }
 
 .badge.low {
-    background-color: #e0f2fe;
-    color: #0284c7;
-    border: 1px solid #0ea5e9;
+    background-color: var(--low-card-bg);
+    color: var(--low-card-color);
+    border: 1px solid var(--low-card-border);
 }
 
 .vuln-project {
-    color: #7a7e83;
+    color: var(--text-secondary);
     font-size: 14px;
     font-weight: 400;
 }
 
 .vuln-createdAt {
-    color: #7a7e83;
+    color: var(--text-secondary);
     font-size: 14px;
     font-weight: 400;
 }
@@ -142,21 +148,21 @@
 }
 
 .badge-status.fixed {
-    background-color: #dcfce7;
-    color: #16a34a;
-    border: 1px solid #86efac;
+    background-color: var(--status-fixed-bg);
+    color: var(--status-fixed-text);
+    border: 1px solid var(--status-fixed-border);
 }
 
 .badge-status.open {
-    background-color: #fee2e2;
-    color: #dc2626;
-    border: 1px solid #fecaca;
+    background-color: var(--critical-card-bg);
+    color: var(--critical-card-color);
+    border: 1px solid var(--critical-card-border);
 }
 
 .badge-status.In-Progress {
-    background-color: #ffedd5;
-    color: #ea580c;
-    border: 1px solid #fed7aa;
+    background-color: var(--high-card-bg);
+    color: var(--high-card-color);
+    border: 1px solid var(--high-card-border);
 }
 
 .vulnerability-not-found {
