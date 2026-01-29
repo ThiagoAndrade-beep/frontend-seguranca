@@ -190,3 +190,10 @@
     color: #9CA3AF;
     font-weight: 400;
 }
+
+
+@media (min-width: 1680px) {
+.vulnerabilities-container {
+max-width: 1500px;
+}
+}

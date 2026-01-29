@@ -1,0 +1,199 @@
+.register-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.register-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 7rem;
+    margin-left: 2rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.brand-name {
+    font-weight: 600;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+.register-security {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F172A;
+    border-radius: 12px;
+}
+
+.register-content {
+    max-width: 520px;
+}
+
+.register-content-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.register-content h2 {
+    font-size: 32px;
+    color: #0f172a;
+}
+
+.register-content p {
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+
+.register-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.register-text h2 {
+    color: #0f172a;
+    font-size: 45px;
+}
+
+.register-texts p {
+    color: #777474;
+    text-align: center;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.input-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    color: #64748b;
+}
+
+.input-icon-container input {
+    width: 100%;
+    padding: 0.75rem 2.5rem;
+    background-color: #F8FAFC;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    color: #0F172A;
+}
+
+.input-icon-container input:focus {
+    outline: none;
+    border-color: #3B82F6;
+    background-color: #ffffff;
+}
+
+.verify-password {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #E5E7EB;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 0.4rem;
+}
+
+.verify-password p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0; /*aqui eu removo a margem padrão*/
+    line-height: 1.3;
+    font-size: 14px;
+}
+
+.link-login {
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.input-register {
+    background-color: #172442;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+}
+
+.text-login {
+    text-align: center;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.login-link {
+    color: #0F172A;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.register-right {
+    flex: 1;
+    background-color: #0f172a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    text-align: center;
+}
+
+.register-right img {
+    max-width: 350px;
+    margin-bottom: 2rem;
+}
+
+.register-right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.register-right-content h2 {
+    font-size: 28px;
+}
+
+.register-right-content p {
+    color: #cbd5e1;
+    max-width: 420px;
+    text-align: center;
+    font-size: 16px;
+}
