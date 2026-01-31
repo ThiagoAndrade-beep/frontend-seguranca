@@ -1,0 +1,83 @@
+.navBar-container {
+    display: flex;
+    padding: 1.5rem 3rem;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.navBar-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.navBar-icon-security {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0F172A;
+    border-radius: 12px;
+}
+
+.navBar-title h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.navBar-nav {
+    display: flex;
+    gap: 2rem;
+    color: #64748b;
+}
+
+.navBar-nav p {
+    cursor: pointer;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.navBar-nav p:hover {
+    color: #0F172A;
+}
+
+.navBar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.navBar-btn-auth {
+    all: unset;
+    color: #10182b;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.navBar-btn-auth:hover {
+    text-decoration: underline;
+}
+
+.navBar-btn-register {
+    all: unset;
+    background-color: #0f172a;
+    color: #fff;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.navBar-btn-register:hover {
+  background-color: #2e365a;
+}

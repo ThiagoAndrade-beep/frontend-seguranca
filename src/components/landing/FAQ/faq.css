@@ -1,0 +1,40 @@
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.faq-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.faq-texts h2 {
+    font-size: 45px;
+    width: 60%;
+    text-align: center;
+    color: #0F172A;
+}
+
+.faq-texts p {
+    color: #64748b;
+    margin-top: 0.5rem;
+    font-size: 17px;
+    text-align: center;
+    width: 70%;
+    letter-spacing: 0.3px;
+}
+
+.cards-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-top: 2rem;
+}

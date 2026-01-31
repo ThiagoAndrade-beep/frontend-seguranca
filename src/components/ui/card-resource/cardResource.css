@@ -1,0 +1,41 @@
+.card-resource {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.09);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+
+    max-width: 300px;
+    border-radius: 16px;
+}
+
+.card-resource:hover {
+  border-color: #CBD5E1;
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+.icons {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EDEFF2;
+    border-radius: 12px;
+}
+
+.card-resource h3 {
+    color: #0F172A;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-resource p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}

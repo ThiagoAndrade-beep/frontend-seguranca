@@ -1,0 +1,123 @@
+.card-price {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.09);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 12px;
+}
+
+.card-price:hover {
+  border-color: #CBD5E1;
+  transition: all 0.2s ease;
+}
+
+.card-price h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.month {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.plan-description {
+    color: #797878;
+    font-size: 14px;
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 0.4rem;
+}
+
+.infos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.infos-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.infos-item p {
+  font-size: 14px;
+  color: #797878;
+}
+
+.check-wrapper {
+  width: 20px;
+  height: 20px;
+  background-color: #EDEFF2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-wrapper svg {
+  color: #0F172A;
+}
+
+.btn-plans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #E5E7EB;
+  color: #0F172A;
+  font-weight: 600;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.btn-plans:hover {
+  background-color: #F8FAFC;
+}
+
+/*card popular*/
+
+.card-popular {
+  position: relative;
+  border: 2px solid #1E2D50;
+}
+
+.card-popular:hover {
+    border-color: #1E2D50;
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1E2D50;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn-popular {
+  background-color: #1E2D50;
+  color: #FFFFFF;
+  border: none;
+}
+
+.btn-popular:hover {
+  background-color: #16213E;
+}
