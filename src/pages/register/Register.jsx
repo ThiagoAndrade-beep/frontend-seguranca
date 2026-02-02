@@ -12,6 +12,12 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const passwordRegex = /^(?=.*[@$!%*?&#])/;
+  const justNumber = /\d/;
+
+  const resultCaracter = passwordRegex.test(password)
+  const resultNumber = justNumber.test(password)
+
   return (
     <main className='register-layout'>
       <section className='register-left'>
@@ -46,25 +52,44 @@ const Register = () => {
                 <span>Senha</span>
                 <div className="input-icon-container">
                   <FiLock size={16} className="input-icon" />
-                  <input type={visiblePassword ? "text" : "password"} placeholder="******" name="password" className='input-password' />
+                  <input
+                    type={visiblePassword ? "text" : "password"}
+                    placeholder="******"
+                    name="password"
+                    className='input-password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                   <button type="button" className="toggle-password" onClick={() => setVisiblePassword(!visiblePassword)}>
                     {visiblePassword ? <FaEyeSlash size={16} color='#73777a' /> : <FaEye size={16} color='#73777a' />}
                   </button>
                 </div>
               </label>
               <div className='verify-password'>
-                <p>
-                  <HiOutlineCheckCircle />
-                  Pelo menos 6 caracteres
-                </p>
-                <p>
-                  <HiOutlineCheckCircle />
-                  Pelo menos 1 caracter especial
-                </p>
-                <p>
-                  <HiOutlineCheckCircle />
-                  Pelo menos 1 número
-                </p>
+                <div className='check'>
+                  <p style={{
+                    color: password.length >= 6 ? 'green' : ''
+                  }}>
+                    <HiOutlineCheckCircle />
+                    Pelo menos 6 caracteres
+                  </p>
+                </div>
+                <div className='check'>
+                  <p style={{
+                    color: resultCaracter ? 'green' : ''
+                  }}>
+                    <HiOutlineCheckCircle />
+                    Pelo menos 1 caracter especial
+                  </p>
+                </div>
+                <div className='check'>
+                  <p style={{
+                    color: resultNumber ? 'green' : ''
+                  }}>
+                    <HiOutlineCheckCircle />
+                    Pelo menos 1 número
+                  </p>
+                </div>
               </div>
 
               <input type="submit" value="Criar conta" className='input-register' />

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./navBar.css"
 import { MdSecurity } from "react-icons/md"
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -17,8 +18,8 @@ const NavBar = () => {
             <p>FAQ</p>
         </div>
         <div className='navBar-buttons'>
-            <button className='navBar-btn-auth'>Entrar</button>
-            <button className='navBar-btn-register'>Criar conta</button>
+            <Link to='/LoginUser' className='navBar-btn-auth'>Entrar</Link>
+            <Link to='/RegisterUser' className='navBar-btn-register'>Criar conta</Link>
         </div>
     </nav>
   )
