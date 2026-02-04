@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const mongoose = require('mongoose')
+const cors = require('cors')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -10,6 +10,7 @@ const db = require('./db')
 db()
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 function checkToken(req, res, next) {
@@ -47,7 +48,7 @@ app.get('/user/:id', checkToken, async (req, res) => {
     res.status(200).json({ userData })
 })
 
-app.post('/register', async (req, res) => {
+app.post('/auth/register', async (req, res) => {
     const { email, password } = req.body
     const passwordRegex = /^(?=.*[@$!%*?&#])/;
     const justNumber = /\d/;
@@ -96,8 +97,9 @@ app.post('/register', async (req, res) => {
     }
 })
 
-app.post('/login', async (req, res) => {
+app.post('/auth/login', async (req, res) => {
     const { email, password } = req.body
+
     if (!email) {
         return res.status(422).json({ msg: 'Preencha o campo com seu email' })
     }
@@ -133,6 +135,17 @@ app.post('/login', async (req, res) => {
 
 app.get('/', (req, res) => {
     res.status(200).json({ msg: 'bem vindo a nossa api' })
+})
+
+app.get('/auth/app', checkToken, async (req, res) => {
+    const user = req.userId
+    const userData = await User.findById(user, '-password')
+    const id = userData._id.toString()
+
+    if(id !== req.userId) {
+        return res.status(403).json({msg: 'Acesso negado - seu id não corresponde ao usuário logado!'})
+    }
+    res.status(200).json({ msg: 'Acesso autorizado a área protegida', userData })
 })
 
 app.listen(3000)

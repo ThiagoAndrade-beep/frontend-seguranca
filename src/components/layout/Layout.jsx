@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import Sidebar from "../sidebar/SideBar";
 import "./layout.css";
 import { ThemeContext } from "../../context/ThemeContext";
+import { Outlet } from "react-router-dom";
 
 function Layout({ children }) {
   const [isSidebarColapsed, setIsSidebarColapsed] = useState(false)
@@ -19,6 +20,7 @@ function Layout({ children }) {
       <div className="layout-main">
         <Header onToggle={toggleSidebar}/>
         <main className="layout-content">
+          <Outlet />
           {children}
         </main>
       </div>

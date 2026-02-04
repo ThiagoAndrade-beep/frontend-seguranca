@@ -6,6 +6,7 @@ import { HiOutlineCheckCircle } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 import imgAuth from "../../assets/auth-illustration.png"
 import "./register.css"
+import fetchApi from '../../services/axios';
 
 const Register = () => {
   const [visiblePassword, setVisiblePassword] = useState(false)
@@ -17,6 +18,25 @@ const Register = () => {
 
   const resultCaracter = passwordRegex.test(password)
   const resultNumber = justNumber.test(password)
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    const user = {
+      email,
+      password
+    }
+
+    try {
+      const response = await fetchApi.post('register', user)
+      console.log(response)
+      alert(response.data.msg)
+    } catch (error) {
+      alert(error.response.data.msg)
+      console.log(error)
+      
+    }
+  }
 
   return (
     <main className='register-layout'>
@@ -34,7 +54,7 @@ const Register = () => {
             <p>Preencha os dados para começar</p>
           </div>
           <div className='register-form'>
-            <form>
+            <form onSubmit={handleSubmit}>
               <label className='register email'>
                 <span>Email</span>
                 <div className='input-icon-container'>
@@ -44,6 +64,8 @@ const Register = () => {
                     placeholder="seuEmail@gmail.com"
                     name="email"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </label>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardVulnerabilities from "../../components/ui/card-vulnerabilities/cardVulnerabilities";
 import "./vulnerabilities.css"
 import { FiAlertCircle } from "react-icons/fi";
@@ -6,6 +6,7 @@ import { FiFilter } from "react-icons/fi";
 import { BsFillCircleFill } from "react-icons/bs";
 import FilterSelect from "../../components/ui/filterselect/FilterSelect";
 import { useVulnerabilities } from "../../hooks/UseVulnerabilities";
+import fetchApi from "../../services/axios";
 
 function Vulnerabilities() {
   const { data, loading } = useVulnerabilities()
@@ -23,7 +24,7 @@ function Vulnerabilities() {
     label: item
   }))
 
-  const filterVulnerabilities = (data) => { 
+  const filterVulnerabilities = (data) => {
     return data.filter((item) => {
       const matchSeverity = !severity || item.severity === severity
       const matchStatus = !status || item.status === status
@@ -34,7 +35,7 @@ function Vulnerabilities() {
   }
 
   const filteredData = filterVulnerabilities(data)
-  
+
   return (
     <main className="vulnerabilities-container">
       <header className="vulnerabilities-header">
@@ -89,41 +90,41 @@ function Vulnerabilities() {
         </div>
       ) : (
         <table className="vuln-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Vulnerability</th>
-            <th>Severity</th>
-            <th>Status</th>
-            <th>Project</th>
-            <th>Created</th>
-            <th></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {filteredData.map(vuln => (
-            <tr key={vuln.id}>
-              <td className="vuln-id">{vuln.id}</td>
-              <td className="vuln-title">{vuln.title}</td>
-              <td>
-                <span className={`badge ${vuln.severity}`}>
-                  {vuln.severity}
-                </span>
-              </td>
-              <td>
-                <span className={`badge-status ${vuln.status}`}>
-                  <BsFillCircleFill size={6}/>
-                  {vuln.status}
-                </span>
-              </td>
-              <td className="vuln-project">{vuln.project}</td>
-              <td className="vuln-createdAt">{vuln.createdAt}</td>
-              <td>›</td>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Vulnerability</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Project</th>
+              <th>Created</th>
+              <th></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {filteredData.map(vuln => (
+              <tr key={vuln.id}>
+                <td className="vuln-id">{vuln.id}</td>
+                <td className="vuln-title">{vuln.title}</td>
+                <td>
+                  <span className={`badge ${vuln.severity}`}>
+                    {vuln.severity}
+                  </span>
+                </td>
+                <td>
+                  <span className={`badge-status ${vuln.status}`}>
+                    <BsFillCircleFill size={6} />
+                    {vuln.status}
+                  </span>
+                </td>
+                <td className="vuln-project">{vuln.project}</td>
+                <td className="vuln-createdAt">{vuln.createdAt}</td>
+                <td>›</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </main>
   );

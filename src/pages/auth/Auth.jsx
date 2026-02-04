@@ -1,13 +1,50 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./auth.css"
 import { MdSecurity } from "react-icons/md"
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FiMail, FiLock } from "react-icons/fi";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import imgAuth from "../../assets/auth-illustration.png"
+import fetchApi from '../../services/axios';
+import { AuthContext } from '../../context/AuthContext';
 
 const Auth = () => {
   const [visiblePassword, setVisiblePassword] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  const {setUser} = useContext(AuthContext)
+
+  async function handleSubmit(e) {
+      e.preventDefault()
+
+      const user = {
+        email,
+        password
+      }
+
+      try {
+        const response = await fetchApi.post('login', user)
+        const token = response.data.token
+      
+        localStorage.setItem('token', token)
+
+        const userRespose = await fetchApi.get('app', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+
+        setUser(userRespose.data.userData)
+        alert(response.data.msg)
+
+        navigate('/app/vulnerabilities')
+      } catch (error) {
+        alert(error.response.data.msg)
+        console.log('erro ao fazer login', error)
+      }
+  }
 
   return (
     <main className='auth-layout'>
@@ -25,7 +62,7 @@ const Auth = () => {
             <p>Bem vindo de volta! Entre com suas credenciais</p>
           </div>
           <div className='login-form'>
-            <form>
+            <form onSubmit={handleSubmit}>
               <label className='login email'>
                 <span>Email</span>
                 <div className='input-icon-container'>
@@ -35,6 +72,8 @@ const Auth = () => {
                     placeholder="seuEmail@gmail.com"
                     name="email"
                     required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
               </label>
@@ -43,9 +82,17 @@ const Auth = () => {
                 <span>Senha</span>
                 <div className="input-icon-container">
                   <FiLock size={16} className="input-icon" />
-                  <input type={visiblePassword ? "text" : "password"} placeholder="******" name="password" className='input-password' />
+                  <input
+                    type={visiblePassword ? "text" : "password"}
+                    placeholder="******"
+                    name="password"
+                    className='input-password'
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                   <button type="button" className="toggle-password" onClick={() => setVisiblePassword(!visiblePassword)}>
-                    {visiblePassword ? <FaEyeSlash size={16} color='#73777a'/> : <FaEye size={16} color='#73777a'/>}
+                    {visiblePassword ? <FaEyeSlash size={16} color='#73777a' /> : <FaEye size={16} color='#73777a' />}
                   </button>
                 </div>
               </label>

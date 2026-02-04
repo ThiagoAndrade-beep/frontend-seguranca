@@ -8,6 +8,8 @@ import Auth from './pages/auth/Auth.jsx'
 import HomePage from './pages/home/HomePage.jsx'
 import Layout from './components/layout/Layout.jsx'
 import Vulnerabilities from './pages/vulnerabilities/Vulnerabilities.jsx'
+import PrivateRoute from './routes/PrivateRoute.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 const router = createBrowserRouter([
     {
@@ -24,7 +26,11 @@ const router = createBrowserRouter([
     },
     {
       path: "/app",
-      element: <Layout />,
+      element: (
+        <PrivateRoute>
+          <Layout />
+        </PrivateRoute>
+      ),
         children: [
           {
             path: "vulnerabilities",
@@ -37,7 +43,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeContextProvider>
-      <RouterProvider router={router}/>
+      <AuthProvider>
+        <RouterProvider router={router}/>
+      </AuthProvider>
     </ThemeContextProvider>
   </StrictMode>,
 )
